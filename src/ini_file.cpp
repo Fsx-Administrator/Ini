@@ -13,7 +13,7 @@ File::File(const QString &name, Modes modes)
     : settings_{nullptr}
 {
     if (!QFileInfo{}.exists(name) && !modes.testFlag(Create))
-        throw Exception{name, "Ini-file does not exsist"};
+        throw Exception{name, "Ini-file does not exist"};
 
     settings_ = std::make_unique<QSettings>(name, QSettings::IniFormat);
 }
